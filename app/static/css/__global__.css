@@ -1,0 +1,95 @@
+main {
+    height: 100vh;
+    margin-top: 1.6%;
+    margin-left: 6.3%;
+    margin-right: 0.9%;
+    background: red;
+}
+
+/* Floating Sidebar */
+.floating-sidebar {
+    position: fixed;
+    top: 1.8%; /* Beri jarak dari atas */
+    left: 1%; /* Beri jarak dari kiri */
+    width: 5em; /* Lebar sidebar */
+    height: 96.2%; /* Tinggi otomatis berdasarkan konten */
+    padding: 10px;
+    padding-top: 3%;
+    border-radius: 10px; /* Membuat sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan agar terlihat melayang */
+}
+
+/* Nav links dalam sidebar */
+.floating-sidebar .nav-link {
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.floating-sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Highlight saat hover */
+    border-radius: 8px;
+}
+
+.icon-logo {
+    text-align: center;
+}
+
+.icon-container {
+    margin-top: 440%;
+}
+
+.header-info {
+    top: 2%;
+    margin-left: 6.3%;
+    margin-right: 0.9%;
+    height: 6vh;
+    position: sticky; /* Tetap di atas saat scroll */
+    z-index: 1050; /* Pastikan berada di atas elemen lain */
+    color: #333; /* Warna teks */
+    display: flex; /* Flexbox untuk menyusun konten */
+    justify-content: space-between;
+    align-items: center; /* Vertikal tengah */
+    padding: 0 20px; /* Tambahkan padding untuk spasi horizontal */
+}
+
+/* Konten Header */
+.header-content {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Container untuk ikon */
+.header-icons {
+    display: flex;
+    align-items: center; /* Ikon rata vertikal */
+    gap: 15px; /* Spasi antar elemen */
+}
+
+/* Gaya tombol notifikasi */
+.header-icons .btn {
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.header-icons .btn i {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/* Badge untuk notifikasi */
+.header-icons .badge {
+    font-size: 0.75rem;
+    color: #fff;
+}
+
+/* Foto Profil */
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Membuat foto berbentuk lingkaran */
+    object-fit: cover;
+    cursor: pointer;
+}

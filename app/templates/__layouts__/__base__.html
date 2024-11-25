@@ -15,11 +15,9 @@
 <body>
 {% include '__layouts__/__header__.html' %}
 <main>
-    <div class="content">
-        {% block content %}
+    {% block content %}
 
-        {% endblock %}
-    </div>
+    {% endblock %}
 </main>
 {% include '__layouts__/__footer__.html' %}
 {% include '__layouts__/__js_sources__.html' %}

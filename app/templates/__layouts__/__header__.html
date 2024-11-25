@@ -1,0 +1,59 @@
+<!-- Floating Sidebar -->
+<div class="floating-sidebar bg-dark text-white">
+    <center><span class="icon-logo"><strong>APPSS</strong></span></center>
+    <ul class="nav nav-pills flex-column text-center icon-container">
+        <li class="nav-item">
+            <a href="#" class="nav-link text-white py-3">
+                <span class="material-symbols-rounded">
+                    home
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-white py-3">
+                <span class="material-symbols-rounded">
+                    calendar_month
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-white py-3">
+                <span class="material-symbols-rounded">
+                    bar_chart
+                </span>
+            </a>
+        </li>
+        <!-- Tambahkan item lainnya -->
+    </ul>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="bi bi-house-door"></i> Home
+                </a>
+            </li>
+            <!-- Tambahkan menu lainnya -->
+        </ul>
+    </div>
+</div>
+
+<div class="header-info">
+    <div class="header-content">
+        <span><h4>Good Morning, X!</h4></span>
+    </div>
+    <div class="header-icons">
+        <button class="btn btn-light position-relative">
+            <span class="material-symbols-rounded">
+                notifications
+            </span>
+        </button>
+        <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="Profile" class="profile-picture">
+    </div>
+</div>
