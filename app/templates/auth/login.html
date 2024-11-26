@@ -1,0 +1,10 @@
+{% extends '__layouts__/__base__.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <h1>Login</h1>
+    <a href="{{ url_for('auth.google_auth') }}">Login with Google</a>
+{% endblock %}
