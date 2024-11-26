@@ -22,6 +22,7 @@ client = WebApplicationClient(app.config["GOOGLE_CLIENT_ID"])
 @app.context_processor
 def inject_config():
     return {
+        'app_name': app_config.get('APP_NAME'),
         'app_version': app_config.get('APP_VERSION'),
         'web': web_config
     }
