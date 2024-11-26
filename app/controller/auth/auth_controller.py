@@ -1,5 +1,6 @@
 import os
 
+import requests
 from flask import Blueprint, render_template, request, redirect, session, url_for
 from google_auth_oauthlib.flow import Flow
 from app.config import load_config
@@ -11,6 +12,12 @@ app_config = load_config('app')
 @auth_bp.route('/login', methods=['GET'])
 def login():
     return render_template('auth/login.html')
+
+
+@auth_bp.route('/logout')
+def logout():
+    session.pop('credentials', None)
+    return redirect(url_for('auth.login'))
 
 
 @auth_bp.route('/google-auth')
@@ -42,4 +49,24 @@ def callback():
         'client_secret': credentials.client_secret,
         'scopes': credentials.scopes
     }
-    return redirect(url_for('main.index'))
+
+    user_info_response = requests.get(
+        'https://www.googleapis.com/oauth2/v2/userinfo',
+        headers={'Authorization': f'Bearer {credentials.token}'},
+        verify=False
+    )
+
+    if user_info_response.status_code == 200:
+        user_info = user_info_response.json()
+        name = user_info.get('name')
+        email = user_info.get('email')
+        picture = user_info.get('picture')
+
+        session['user'] = {
+            'name': name,
+            'email': email,
+            'picture': picture
+        }
+        return redirect(url_for('main.index'))
+    else:
+        return "Error fetching user information", 400
