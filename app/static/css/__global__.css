@@ -1,13 +1,25 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #D0E1E9;
+    --base-color: #DFECF2;
+    --default-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+body {
+    background-color: var(--base-color) !important;
+}
+
 main {
     height: 100vh;
     margin-top: 1.6%;
-    margin-left: 6.3%;
+    margin-left: 6.6%;
     margin-right: 0.9%;
-    background: red;
+    background-color: var(--secondary-color);
 }
 
 /* Floating Sidebar */
 .floating-sidebar {
+    background-color: var(--primary-color) !important;
     position: fixed;
     top: 1.8%; /* Beri jarak dari atas */
     left: 1%; /* Beri jarak dari kiri */
@@ -16,7 +28,7 @@ main {
     padding: 10px;
     padding-top: 3%;
     border-radius: 10px; /* Membuat sudut melengkung */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan agar terlihat melayang */
+    box-shadow: var(--default-shadow);
 }
 
 /* Nav links dalam sidebar */
@@ -29,6 +41,10 @@ main {
 .floating-sidebar .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Highlight saat hover */
     border-radius: 8px;
+}
+
+.settings {
+    margin-top: 490%;
 }
 
 .icon-logo {
@@ -50,7 +66,7 @@ main {
     display: flex; /* Flexbox untuk menyusun konten */
     justify-content: space-between;
     align-items: center; /* Vertikal tengah */
-    padding: 0 20px; /* Tambahkan padding untuk spasi horizontal */
+    padding: 0 20px 0 6px; /* Tambahkan padding untuk spasi horizontal */
 }
 
 /* Konten Header */
