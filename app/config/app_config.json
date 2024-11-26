@@ -1,7 +1,0 @@
-{
-  "APP_NAME": "Money Manager Dashboard",
-  "APP_VERSION": "v0.0.0",
-  "FLASK_ENV": "development",
-  "DEBUG": true,
-  "SECRET_KEY": "3f7um589dju8w"
-}
