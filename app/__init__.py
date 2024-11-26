@@ -1,12 +1,17 @@
 import os
 from flask import Flask
-from app.config import load_all_config
+from oauthlib.oauth2 import WebApplicationClient
+
+from app.config import load_config
+from app.controller.auth.auth_controller import auth_bp
 from app.controller.main_controller import main_bp
 
 app = Flask(__name__)
 
-app_config, web_config = load_all_config()
+app_config, web_config = load_config()
 app.config.update(app_config)
+
+client = WebApplicationClient(app.config["GOOGLE_CLIENT_ID"])
 
 
 @app.context_processor
@@ -18,3 +23,4 @@ def inject_config():
 
 
 app.register_blueprint(main_bp)
+app.register_blueprint(auth_bp)
