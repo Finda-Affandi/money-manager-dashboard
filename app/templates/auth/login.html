@@ -1,10 +1,33 @@
-{% extends '__layouts__/__base__.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    {% include '__layouts__/__css_sources__.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/login.css') }}">
+</head>
+<body>
+<div class="row">
+    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
 
-{% block title %}
 
-{% endblock %}
+        <div>
+            <h3 class="animate__animated animate__fadeInUp">let's start managing your finances</h3>
+            <br>
+            <a href="{{ url_for('auth.google_auth') }}"
+               class="btn default-shadow dark align-items-center animate__animated animate__fadeInUp">
+                <img src="{{ url_for('static', filename='img/google.webp') }}"
+                     alt="Google Logo" style="width: 20px; height: 20px; margin-right: 10px;">
+                Login with Google
+            </a>
+        </div>
+    </div>
+    <div class="col right-column animate__animated animate__fadeInRight">
 
-{% block content %}
-    <h1>Login</h1>
-    <a href="{{ url_for('auth.google_auth') }}">Login with Google</a>
-{% endblock %}
+    </div>
+</div>
+</body>
+</html>
