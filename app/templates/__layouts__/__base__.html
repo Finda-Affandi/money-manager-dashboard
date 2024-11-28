@@ -13,13 +13,24 @@
     {% include '__layouts__/__css_sources__.html' %}
 </head>
 <body>
+<div id="loading-layer">
+    <img src="{{ url_for('static', filename='img/loader.gif') }}" alt="Loading...">
+</div>
+
+{% include '__layouts__/__header__.html' %}
 
 <main>
     {% block content %}
 
     {% endblock %}
 </main>
-
+{% include '__layouts__/__footer__.html' %}
 {% include '__layouts__/__js_sources__.html' %}
+<script>
+    $(window).on('load', function () {
+        $('#loading-layer').fadeOut(500); // Fade out loading layer dalam 500ms
+        $('body').fadeIn(500); // Fade in body setelah layer menghilang
+    });
+</script>
 </body>
 </html>
