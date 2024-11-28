@@ -4,6 +4,16 @@ from typing import Any, Tuple
 
 
 def load_config(config: str = None) -> tuple[Any, Any] | Any:
+    """
+    Prepare loading config
+
+    Parameters:
+        config (str): config type, default None mean get all config
+
+    Returns:
+        Json: config data
+    """
+
     if config == 'app':
         return __load('app_config.json')
     elif config == 'web':

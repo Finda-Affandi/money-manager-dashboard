@@ -11,17 +11,38 @@ app_config = load_config('app')
 
 @auth_bp.route('/login', methods=['GET'])
 def login():
+    """
+    Displaying login page
+
+    Returns:
+        str: login page
+    """
+
     return render_template('auth/login.html')
 
 
 @auth_bp.route('/logout')
 def logout():
+    """
+    Logout and delete session
+
+    Returns:
+        Response: url login page
+    """
+
     session.pop('credentials', None)
     return redirect(url_for('auth.login'))
 
 
 @auth_bp.route('/google-auth')
 def google_auth():
+    """
+    authenticating Google SSO
+
+    Returns:
+        Response: url google auth page
+    """
+
     flow = Flow.from_client_secrets_file(
         os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'config\\client_secret.json'),
         scopes=app_config.get('SCOPES'),
@@ -33,6 +54,13 @@ def google_auth():
 
 @auth_bp.route('/callback')
 def callback():
+    """
+    Callbar url redirect from Google
+
+    Returns:
+        Response: url to main page if auth success, error message if auth fail
+    """
+
     flow = Flow.from_client_secrets_file(
         os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'config\\client_secret.json'),
         scopes=app_config.get('SCOPES'),
